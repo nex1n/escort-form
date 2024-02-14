@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <title>Форма регистрации</title>
+    <!-- <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename='styles.css') }}"
+        /> -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-stone-800">
+    <div class="text-white">
+        <div class="mt-10 p-5 max-w-md mx-auto text-md">
+            <form action="/submit" method="post" enctype="multipart/form-data">
+                <div class="relative z-0 w-full group">
+                    <input pattern="^[a-zA-Z\s]+$" title="Only letters and spaces are allowed in the name" name="name"
+                        class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="name"
+                        class="peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Your Name
+                    </label>
+                </div>
+
+                <div class="mt-5">
+                    <label for="country" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Choose Country
+                    </label>
+                    <select name="country"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+
+                <div class="mt-5">
+                    <label for="city" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Choose City
+                    </label>
+                    <select name="city"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+
+                <span class="block mt-5 font-medium text-gray-900 dark:text-white">
+                    Upload your photo
+                </label>
+                <div class="mt-2 flex items-center justify-center w-full">
+                    <input name="dropzone-file" id="dropzone-file" class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="large_size" type="file" accept="image/*">
+                </div>
+
+                <div class="mt-5">
+                    <label for="profile" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Choose Work Profile
+                    </label>
+                    <select name="profile"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+
+                <div class="mt-5">
+                    <label for="is_star" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Pornstar?
+                    </label>
+                    <select name="is_star" disabled
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>No</option>
+                    </select>
+                </div>
+                
+                <div class="mt-5">
+                    <label for="meeting" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Who are you meeting with?
+                    </label>
+                    <select name="meeting"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+                
+                <div class="mt-6 relative z-0 w-full group">
+                    <input name="weight" pattern="[0-9]+(\.[0-9]+)?" title="Please enter a valid weight (a number with an optional decimal part)"
+                        class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="weight"
+                        class="peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Weight
+                    </label>
+                </div>
+
+                <div class="mt-5">
+                    <label for="eyes-color" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Eye Color?
+                    </label>
+                    <select name="eyes-color"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Black</option>
+                        <option>Blue</option>
+                        <option>Blue-green</option>
+                        <option>Brown</option>
+                        <option>Green</option>
+                        <option>Grey</option>
+                        <option>Hazel</option>
+                    </select>
+                </div>
+                
+                <div class="mt-5">
+                    <label for="piercing" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Piercing
+                    </label>
+                    <select name="piercing"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>тут потом сделаю</option>
+                    </select>
+                </div>
+                
+                <div class="mt-5">
+                    <label for="breast" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Breast Type
+                    </label>
+                    <select name="breast"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                </div>
+                <div class="mt-5">
+                    <label for="smoker" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Smoker
+                    </label>
+                    <select name="smoker" disabled
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="mt-5">
+                    <label for="public-hair" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Public hair
+                    </label>
+                    <select name="public-hair" disabled
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Shaved</option>
+                    </select>
+                </div>
+                <div class="mt-5">
+                    <label for="orientation" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Orientation
+                    </label>
+                    <select name="orientation"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Straight</option>
+                        <option>Lesbian</option>
+                        <option>Bisexual</option>
+                    </select>
+                </div>
+                <div class="mt-5">
+                    <label for="hair-color" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Hair Color
+                    </label>
+                    <select name="hair-color"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Light</option>
+                        <option>Brown</option>
+                        <option>Black</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+
+                <div class="mt-6 relative z-0 w-full group">
+                    <input name="height"
+                        class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="height"
+                        class="peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Height
+                    </label>
+                </div>
+                
+                <div class="mt-6 relative z-0 w-full group">
+                    <input name="age"
+                        class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-400 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="age"
+                        class="peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Age
+                    </label>
+                </div>
+                
+                <div class="mt-5">
+                    <label for="tatoo" class="block mb-2 font-medium text-gray-900 dark:text-white">
+                        Tattoo
+                    </label>
+                    <select name="tatoo"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>
